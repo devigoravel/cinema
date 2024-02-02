@@ -56,5 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 // Создаем роутер для новостей
 $route['news'] = 'news';
+// Создаем роутер для создания новости
+$route['news/create'] = 'news/create';
 // Создаем роутер для просмотра одной новости
-$route['news/(:any)'] = 'news/view/';
+$route['news/(:any)'] = 'news/view/$1';

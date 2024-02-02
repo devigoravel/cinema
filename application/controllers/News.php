@@ -28,14 +28,27 @@ class News extends CI_Controller
     public function view($slug = NULL)
     {
         $data['news_item'] = $this->NewsModel->getNews($slug);
+
         if(empty($data['news_item'])) {
             show_404();
         }
 
         $data['title'] =  $data['news_item']['title'];
         $data['content'] =  $data['news_item']['text'];
+
         $this->load->view('templates/header', $data);
         $this->load->view('news/view', $data);
+        $this->load->view('templates/footer');
+
+    }
+
+    // Метод для создания новости
+    public function create()
+    {
+        $data['title'] = "Добавить новость";
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('news/create', $data);
         $this->load->view('templates/footer');
 
     }
