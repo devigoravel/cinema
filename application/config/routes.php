@@ -60,3 +60,5 @@ $route['news'] = 'news';
 $route['news/create'] = 'news/create';
 // Создаем роутер для просмотра одной новости
 $route['news/(:any)'] = 'news/view/$1';
+// Роутер для редактирования новостей
+$route['news/edit'] = 'news/edit';
